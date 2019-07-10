@@ -51,7 +51,7 @@ body{
     cursor: pointer;
 }
 
-.buttons .btn:active{
+.buttons .btn:active, .buttons .btn.is-pressed{
     transform: translate(3px, 1px);
     box-shadow: 2px 3px 0 #888, 3px 4px 0px #111;
 }

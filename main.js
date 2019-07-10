@@ -10,7 +10,7 @@ let res = "";
   
 btns.addEventListener("click", e => {
     clearFunction(e.target.id);
-    calculationProcess(e.target.id);
+    calculationProcess(e.target);
 });
 
 // All clear key functionality
@@ -43,21 +43,28 @@ function calculationProcess(key){
 
     if(entryLen >= 15){ 
         currentEntry += "";
-    }else if(operators.includes(key) === true){
-        equation += currentEntry + key;
+    }else if(operators.includes(key.id) === true){
+        equation += currentEntry + key.id;
         initialRes = eval(equation.substring(0, equation.length-1)).toString();
         currentEntry = initialRes;
         entryLen = initialRes.length;
+
+        //add pressed state for an operator
+        key.classList.add("is-pressed");
         
-    }else if(numbers.includes(key) === true){
+    }else if(numbers.includes(key.id) === true){
         if(operators.includes(equation[equation.length - 1])){
             currentEntry = "";
             entryLen = 0; 
         }
 
-        currentEntry += key;
-        entryLen++;       
-    }else if(key == "="){
+        currentEntry += key.id;
+        entryLen++;      
+
+        //remove pressed btn state and back to its normal form
+        Array.from(key.parentNode.children).forEach(k => k.classList.remove("is-pressed"));
+
+    }else if(key.id == "="){
         res = eval(equation + currentEntry).toString();
         currentEntry = res;
         entryLen = res.length;
