@@ -3,8 +3,9 @@ This is my side project calculator in order to enhance my skills specially my fu
 have some validation issues and try to add new validation to it otherwise it is a functional calculator.
 
 ## Features and Validation
-..* Capable on common mathematical operation like (+, -, *, /) and exponent..
-..* add leading zero (0) if you enter decimal point(.) as first input..
+* Capable on common mathematical operation like (+, -, *, /) and exponent.
+
+* add leading zero (0) if you enter decimal point(.) as first input.
 
 ### Setup
 
